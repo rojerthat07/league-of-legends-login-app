@@ -10,7 +10,11 @@ class Register extends Component {
           <img src={riotLogo} alt="riot-logo" />
         </div>
         <div className="register">
-          <form method="post" className="register__form">
+          <form
+            method="get"
+            action="/successfulregistration"
+            className="register__form"
+          >
             <p>
               {" "}
               <legend>Create Account:</legend>
@@ -22,6 +26,7 @@ class Register extends Component {
               className="register__input"
               placeholder="Username"
               type="text"
+              required
             />
 
             <input
@@ -29,6 +34,7 @@ class Register extends Component {
               className="register__input"
               placeholder="Email"
               type="text"
+              required
             />
 
             <input
@@ -36,6 +42,7 @@ class Register extends Component {
               className="register__input"
               placeholder="Password"
               type="password"
+              required
             />
 
             <input
@@ -43,6 +50,7 @@ class Register extends Component {
               className="register__input"
               placeholder="Confirm Password"
               type="password"
+              required
             />
 
             <p>
@@ -58,7 +66,7 @@ class Register extends Component {
             </p>
 
             <button type="submit" className="register__submit">
-              <i className="fas fa-arrow-right"></i>
+              Register
             </button>
           </form>
         </div>
