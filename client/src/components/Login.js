@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import lolLogo from "../images/lol-logo.png";
 import riotLogo from "../images/riot-games-logo.png";
 
 class Login extends Component {
