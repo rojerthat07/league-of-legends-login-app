@@ -6,6 +6,7 @@ const { registerValidation, loginValidation } = require("../validation");
 const { get } = require("mongoose");
 
 router.post("/register", async (req, res) => {
+  console.log(req.body);
   const { error } = registerValidation(req.body); //validate data
 
   if (error) return res.status(400).send(error.details[0].message); //return bad request when there is an error in the validation.
@@ -15,12 +16,17 @@ router.post("/register", async (req, res) => {
 
   const salt = await bcrypt.genSalt(10); //Hash password
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  const hashedConfirmPassword = await bcrypt.hash(
+    req.body.confirmPassword,
+    salt
+  );
 
   //creating new user detail
   const user = new User({
     username: req.body.username,
     email: req.body.email,
     password: hashedPassword,
+    confirmPassword: hashedConfirmPassword,
   });
 
   try {
