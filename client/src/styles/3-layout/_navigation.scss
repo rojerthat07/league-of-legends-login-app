@@ -1,0 +1,16 @@
+.navbar{
+    .navbar-brand{
+        font-family: font("font2");
+        color:$color4;
+        font-size: 1.5em;
+    }
+
+    .navbar-nav{
+        margin-left: auto;
+        .nav-item{
+            .nav-link{
+                color:$color7;
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import './main.scss';
 //Components
 import Register from './components/Register';
 import Login from './components/Login';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
@@ -13,30 +14,8 @@ function App() {
     <Router>
       <Switch>
 
-      <Route path="/" exact>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-
-  <a class="navbar-brand" href="#">Navbar</a>
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <Route path="/">
+        <Navigation></Navigation>
       </Route>
 
       <Route path="/login" component={Login}></Route>
