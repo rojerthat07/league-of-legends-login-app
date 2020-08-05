@@ -1,0 +1,17 @@
+.successful-register {
+  text-transform: uppercase;
+  padding: 1em;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  .successful-register__message {
+    font-size: 2em;
+    span {
+      font-size: 1.5em;
+      color: $color2;
+      Link {
+      }
+    }
+  }
+}
