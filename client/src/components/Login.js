@@ -10,14 +10,14 @@ class Login extends Component {
           <img src={riotLogo} alt="riot-logo" />
         </div>
         <div className="register">
-          <form method="get" className="register__form">
+          <form method="post" className="register__form">
             <p>
               {" "}
               <legend>Login</legend>
             </p>
 
             <input
-              name="username"
+              name="email"
               className="register__input"
               placeholder="Username"
               type="text"

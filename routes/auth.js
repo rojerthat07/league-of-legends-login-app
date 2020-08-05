@@ -4,6 +4,10 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { registerValidation, loginValidation } = require("../validation");
 const { get } = require("mongoose");
+const bodyParser = require("body-parser");
+
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
 
 router.post("/register", async (req, res) => {
   console.log(req.body);

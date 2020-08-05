@@ -3,6 +3,23 @@ import lolLogo from "../images/lol-logo.png";
 import riotLogo from "../images/riot-games-logo.png";
 
 class Register extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    };
+  }
+
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -10,11 +27,7 @@ class Register extends Component {
           <img src={riotLogo} alt="riot-logo" />
         </div>
         <div className="register">
-          <form
-            method="get"
-            action="/successfulregistration"
-            className="register__form"
-          >
+          <form method="post" className="register__form">
             <p>
               {" "}
               <legend>Create Account:</legend>
@@ -23,33 +36,41 @@ class Register extends Component {
 
             <input
               name="username"
+              value={this.state.username}
               className="register__input"
               placeholder="Username"
               type="text"
+              onChange={this.changeHandler}
               required
             />
 
             <input
               name="email"
+              value={this.state.email}
               className="register__input"
               placeholder="Email"
               type="text"
+              onChange={this.changeHandler}
               required
             />
 
             <input
               name="password"
+              value={this.state.password}
               className="register__input"
               placeholder="Password"
               type="password"
+              onChange={this.changeHandler}
               required
             />
 
             <input
-              name="confirm-password"
+              name="confirmPassword"
+              value={this.state.confirmPassword}
               className="register__input"
               placeholder="Confirm Password"
               type="password"
+              onChange={this.changeHandler}
               required
             />
 
